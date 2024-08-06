@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import LogoIcon from '../asset/Logo';
 import AuthCard from '../component/authcard';
-
 const Auth: React.FC = () => {
- 
   return (
-    <div className="flex justify-center items-center h-screen">
-        <AuthCard/>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className='mb-12'>
+        <LogoIcon />
+      </div>
+      <AuthCard />
     </div>
   );
 };
