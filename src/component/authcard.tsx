@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PasswordInput from './passwordInput';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC<{ switchToRegister: () => void }> = ({ switchToRegister }) => {
+    const navigate = useNavigate();
     const [emailOrUsername, setEmailOrUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -17,6 +19,7 @@ const Login: React.FC<{ switchToRegister: () => void }> = ({ switchToRegister })
         event.preventDefault();
         console.log('Email or Username:', emailOrUsername);
         console.log('Password:', password);
+        navigate('/home')
     };
 
     return (
@@ -26,6 +29,7 @@ const Login: React.FC<{ switchToRegister: () => void }> = ({ switchToRegister })
             <div className="flex flex-col gap-2 mt-11">
                 <label className="text-base font-medium text-text-light">Email or Username</label>
                 <input
+                    required
                     className="input-regular"
                     type="text"
                     name="emailOrUsername"
@@ -56,6 +60,7 @@ const Login: React.FC<{ switchToRegister: () => void }> = ({ switchToRegister })
 };
 
 const Register: React.FC<{ switchToLogin: () => void }> = ({ switchToLogin }) => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState<string>('');
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -77,6 +82,7 @@ const Register: React.FC<{ switchToLogin: () => void }> = ({ switchToLogin }) =>
         console.log('Email:', email);
         console.log('Username:', username);
         console.log('Password:', password);
+        navigate('/home')
     };
 
     return (
@@ -87,6 +93,7 @@ const Register: React.FC<{ switchToLogin: () => void }> = ({ switchToLogin }) =>
                 <label className="text-base font-medium text-text-light">Email</label>
                 <input
                     className="input-regular"
+                    required
                     type="text"
                     name="email"
                     id="email"
@@ -99,6 +106,7 @@ const Register: React.FC<{ switchToLogin: () => void }> = ({ switchToLogin }) =>
                 <label className="text-base font-medium text-text-light">Username</label>
                 <input
                     className="input-regular"
+                    required
                     type="text"
                     name="username"
                     id="username"

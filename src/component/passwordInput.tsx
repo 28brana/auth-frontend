@@ -24,6 +24,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ value, onChange, placehol
         placeholder={placeholder}
         id="password"
         name="password"
+        required
       />
       <button
         type="button"
