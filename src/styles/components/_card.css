@@ -1,8 +1,5 @@
 .card{
-    border-width: 2px;
-    border-style: solid;
-    /* border-image-source: linear-gradient(129.59deg, #969696 0%, #343434 98.18%);
-    border-image-slice: 1; */
+    border: 2px solid #969696;
     width: 463px;
     border-radius: 8px;
     @apply px-12 py-14 bg-card-bg;
